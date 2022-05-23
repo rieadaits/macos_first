@@ -65,7 +65,9 @@ class _MyHomePageState extends State<MyHomePage> {
         height: double.maxFinite,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/image.webp'), fit: BoxFit.fitHeight),
+            image: AssetImage('assets/image.webp'),
+            fit: BoxFit.fitHeight,
+          ),
         ),
         child: GridView.count(
           physics: const NeverScrollableScrollPhysics(),
@@ -82,7 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
             choices.length,
             (index) {
               return Center(
-                child: SelectCard(choice: choices[index]),
+                child: SelectCard(
+                  choice: choices[index],
+                ),
               );
             },
           ),
@@ -107,17 +111,26 @@ class SelectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle? textStyle = Theme.of(context).textTheme.bodyText1;
     return Card(
-        color: Colors.orange,
-        child: Center(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Center(
-                  child: Icon(choice.icon, size: 50.0, color: textStyle?.color),
-                ),
-                Text(choice.title, style: textStyle),
-              ]),
-        ));
+      color: Colors.orange,
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: Icon(
+                choice.icon,
+                size: 50.0,
+                color: textStyle?.color,
+              ),
+            ),
+            Text(
+              choice.title,
+              style: textStyle,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
