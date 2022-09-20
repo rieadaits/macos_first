@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:macos_first/helpers/scrren_size/screen_size.dart';
 import 'package:window_size/window_size.dart';
